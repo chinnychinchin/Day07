@@ -1,0 +1,28 @@
+<div class="row mt-5">
+    <div class="d-flex flex-column align-items-center col-3">
+        <h3>{{showDetails.name}}</h3>
+        <img class="align-self-center" src="{{showDetails.image}}" alt="showImage">   
+    </div>
+    <div class="col-8">
+        <p class="lead">
+            {{{showDetails.summary}}}
+        </p>
+        <code>Rating: {{showDetails.rating}}</code>
+
+        <div class="d-flex justify-content-between mt-3">
+            <a class="btn btn-warning" href="/">
+			Back
+		    </a>
+            {{#if hasSite}}
+                <a class="btn btn-outline-info" href="{{showDetails.official_site}}" target="_blank">Offical Site</a>
+            {{/if}}
+        </div>
+      
+        
+    </div>
+
+</div>
+
+
+
+
