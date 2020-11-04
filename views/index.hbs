@@ -1,5 +1,30 @@
 <div class="list-group">
+    {{#if noShows}}
+        <a class="btn btn-warning" href="/">
+			Return home
+		</a>
+
+    {{else}}
     {{#each tv_shows}}
     <a href="/shows/{{this.tvid}}" class="list-group-item list-group-item-action">{{this.name}}</a>
     {{/each}}
+    <div class="container mt-3 mb-3">
+        <div class="d-flex justify-content-around row-6">
+            <form action="/" method="get">
+                <input type="hidden" name="offset" value="{{prevOffset}}">
+                <input type="hidden" name="pageNum" value="{{prevPageNum}}">
+                <button class="btn btn-primary" type="submit">Previous</button>
+            </form>
+            <code>Page {{pageNum}} of {{numOfPages}}</code>
+            <form action="/" method="get">
+                <input type="hidden" name="offset" value="{{nextOffset}}">
+                <input type="hidden" name="pageNum" value="{{nextPageNum}}">
+                <button class="btn btn-primary" type="submit">Next</button>
+            </form>
+        </div>
+    </div>
+   
+    {{/if}}
+    
 </div>
+
