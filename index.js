@@ -42,7 +42,7 @@ pool.getConnection().then(conn => {
     const p0 = conn.ping() // returns promise
     console.log('Pinging server...');
     const p1 = Promise.resolve(conn);
-    app.listen(PORT, () => {`Your tv app has started on port ${PORT} at ${new Date()}`})
+    app.listen(PORT, () => {console.log(`Your tv app has started on port ${PORT} at ${new Date()}`)})
     return Promise.all([p0,p1])
 }).then(result => {
     const conn = result[1];
